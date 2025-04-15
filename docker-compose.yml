@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  server:
+    build: ./server
+    environment:
+      DB_USER: qatest
+      DB_HOST: db
+      DB_NAME: todo_db
+      DB_PASSWORD: meu_banco_todo
+      DB_PORT: 5432
+      SERVER_PORT: 5000
+    ports:
+      - "5000:5000"
+    depends_on:
+      - db
+
+  client:
+    build: ./client
+    ports:
+      - "3000:80"
+    depends_on:
+      - server
+
+  db:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_USER: qatest
+      POSTGRES_PASSWORD: meu_banco_todo
+      POSTGRES_DB: todo_db
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./server/initdb.d:/docker-entrypoint-initdb.d
+
+volumes:
+  postgres_data:

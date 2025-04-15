@@ -19,8 +19,7 @@ node_modules/
 .idea/
 .vscode/
 
-# Docker
-docker-compose.override.yml
+
 
 # misc
 .DS_Store
