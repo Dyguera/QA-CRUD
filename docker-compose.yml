@@ -28,9 +28,10 @@ services:
       POSTGRES_USER: qatest
       POSTGRES_PASSWORD: meu_banco_todo
       POSTGRES_DB: todo_db
+      POSTGRES_HOST_AUTH_METHOD: trust
     volumes:
       - postgres_data:/var/lib/postgresql/data
-      - ./server/initdb.d:/docker-entrypoint-initdb.d
+
 
 volumes:
   postgres_data:
