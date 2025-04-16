@@ -11,10 +11,4 @@ const pool = new Pool({
   port: 5432,
 });
 
-// Testa a conexão e cria a tabela ao iniciar
-pool.on('connect', async () => {
-  console.log('Conectado ao PostgreSQL');
-  await createTableIfNotExists(pool);
-});
-
 module.exports = pool;

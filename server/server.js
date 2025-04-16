@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const pool = require('./src/db/index'); // Importa para garantir a inicialização do DB
+const { createTableIfNotExists } = require('./src/db/initDB');
 const todosRouter = require('./src/routes/routes');
 
 const app = express();
@@ -25,6 +26,8 @@ app.use((err, req, res, next) => {
 });
 
 const PORT = 5000;
-app.listen(PORT, () => {
-  console.log(`Servidor rodando em http://localhost:${PORT}`);
-});
+createTableIfNotExists(pool).then(() => {
+  app.listen(PORT, () => {
+    console.log(`Servidor rodando em http://localhost:${PORT}`);
+  });
+})
