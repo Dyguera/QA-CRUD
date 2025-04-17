@@ -72,14 +72,16 @@ function App() {
       </form>
       <ul>
         {todos.map((todo) => (
-          <li key={todo.id}>
+          <li key={todo.id} data-cy={`todo-item-${todo.id}`}>
             <span
               style={{ textDecoration: todo.completed ? 'line-through' : 'none' }}
               onClick={() => toggleTodo(todo.id, todo.completed)}
             >
               {todo.task}
             </span>
-            <button onClick={() => deleteTodo(todo.id)}>🗑️</button>
+            <button 
+            data-cy={`delete-button-${todo.id}`}
+            onClick={() => deleteTodo(todo.id)}>🗑️</button>
           </li>
         ))}
       </ul>

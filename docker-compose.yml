@@ -38,5 +38,19 @@ services:
       timeout: 5s
       retries: 5
 
+  cypress:
+    image: cypress/included:12.17.1
+    depends_on:
+      client:
+        condition: service_healthy  # Se você tiver um healthcheck no frontend
+      server:
+        condition: service_healthy
+    environment:
+      CYPRESS_baseUrl: http://client:80  # Nome do serviço do frontend na rede Docker
+    volumes:
+      - ./client/cypress:/e2e/cypress
+      - ./client/cypress.config.js:/e2e/cypress.config.js
+    command: npx cypress run
+    
 volumes:
   postgres_data:
