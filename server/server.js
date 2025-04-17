@@ -31,3 +31,5 @@ createTableIfNotExists(pool).then(() => {
     console.log(`Servidor rodando em http://localhost:${PORT}`);
   });
 })
+
+module.exports = app; // Para testes
