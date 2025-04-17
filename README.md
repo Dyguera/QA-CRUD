@@ -1,24 +1,13 @@
-# TODO App
+# TODO App - Gerenciador de Tarefas
 
-Aplicação FullStack (React + Node.js + PostgreSQL) para gerenciar tarefas.
+Aplicação FullStack moderna para gerenciamento de tarefas, utilizando **React** no frontend, **Node.js** no backend e **PostgreSQL** como banco de dados. Todo o ambiente é orquestrado via **Docker**, garantindo fácil execução e portabilidade.
 
-## Como Executar
+---
 
-1. **Pré-requisitos:**
-   - [Docker](https://www.docker.com/)
-   - [Docker Compose](https://docs.docker.com/compose/install/)
+## Sumário
 
-2. **Clone o Repositório:**
-   ```bash
-   git clone https://github.com/Dyguera/QA-CRUD.git
-   cd QA-CRUD
 
- 3. **Inicie os Containers:**
-   docker-compose up --build
 
- 4. **Acesse a aplicação:**
- Frontend: http://localhost:3000
- API (Postman): http://localhost:5000
+---
 
-  4. **Acesse a aplicação:**
- npx cypress run para testar a aplicação
+
