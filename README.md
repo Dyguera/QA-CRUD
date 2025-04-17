@@ -19,3 +19,6 @@ Aplicação FullStack (React + Node.js + PostgreSQL) para gerenciar tarefas.
  4. **Acesse a aplicação:**
  Frontend: http://localhost:3000
  API (Postman): http://localhost:5000
+
+  4. **Acesse a aplicação:**
+ npx cypress run para testar a aplicação
