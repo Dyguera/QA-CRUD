@@ -10,8 +10,8 @@ Aplicação FullStack (React + Node.js + PostgreSQL) para gerenciar tarefas.
 
 2. **Clone o Repositório:**
    ```bash
-   git clone https://github.com/seu-usuario/todo-app.git
-   cd todo-app
+   git clone https://github.com/Dyguera/QA-CRUD.git
+   cd QA-CRUD
 
  3. **Inicie os Containers:**
    docker-compose up --build
